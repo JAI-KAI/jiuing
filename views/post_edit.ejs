@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:8000/css/style.css">
+    <title>揪團</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo_box row">
+                <img src="http://localhost:8000/images/LOGO.png" alt="">
+                <p>揪ing</p>
+            </div>
+            <ul class="row">
+                <a href=""><li>會員專區</li></a>
+                <a href=""><li>新手上路</li></a>
+                <a href=""><li>聯絡我們</li></a>
+            </ul>
+            <div class="member_box">
+                <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                <p>會員名稱</p>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container post_page">
+            <div class="post_item">
+                <div class="images"></div>
+                <div class="post_item_content">
+                    <h2><%=post.title%></h2>
+                    <div class="btn btn_orange">申請加入</div>
+                    <p>揪團時間: <%= post.activityDate%>  <%= post.activityTime%></p>
+                    <p>活動時間: <%= post.registeredDate%>  <%= post.registeredTime%></p>
+                    <p ><%=post.location%></p>
+                    <p><%= post.minPeople %></p>
+                    <p><%= post.maxPeople %></p>
+                    <p><%= post.price %> / 人</p>
+                    <p><%= post.content %></p>
+                </div>
+            </div>
+            <div class="comment">
+                <div class="comment_title">
+                    <h2>揪團討論ING</h2>
+                </div>
+                <div class="comment_input">
+                    <input type="text" placeholder="傳送留言....">
+                    <div class="submit"><img src="http://localhost:8000/images/submit.svg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://localhost:8000/js/jquery-3.7.1.min.js"></script>
+<script>
+
+</script>
+</html>

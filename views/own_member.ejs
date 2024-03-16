@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:8000/css/style.css">
+    <title>揪團</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/">
+                <div class="logo_box row">
+                    <img src="http://localhost:8000/images/LOGO.png" alt="">
+                    <p>揪ing</p>
+                </div>
+            </a>
+            <ul class="row">
+                <a href="/ownMember"><li>會員專區</li></a>
+                <a href=""><li>新手上路</li></a>
+                <a href=""><li>聯絡我們</li></a>
+            </ul>
+            <div class="member_box">
+                <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                <p>會員名稱</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logoIn">
+                <input type="text" name="" id="">
+                <input type="password" name="" id="">
+                <input type="submit" value="登入">
+                <a href="/registration">註冊帳號</a>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container row member">
+            <div class="memberNav">
+                <div class="memberNavBtn row" id="settingBtn">
+                    <img src="http://localhost:8000/images/setting_icon.png" alt="">
+                    <h3 class="p_letter">帳號設定</h3>
+                </div>
+                <div class="memberNavBtn row" id="noteBtn">
+                    <img src="http://localhost:8000/images/notification_icon.png" alt="">
+                    <h3 class="p_letter">訊息通知</h3>
+                </div>
+                <div class="memberNavBtn row" id="recordBtn">
+                    <img src="http://localhost:8000/images/jiu_icon.png" alt="">
+                    <h3 class="p_letter">揪團紀錄</h3>
+                </div>
+                <div class="memberNavBtn row" id="joinRecordBtn">
+                    <img src="http://localhost:8000/images/join_icon.png" alt="">
+                    <h3 class="p_letter">參加紀錄</h3>
+                </div>
+                <div class="memberNavBtn row" id="likeBtn">
+                    <img src="http://localhost:8000/images/like_icon.png" alt="">
+                    <h3 class="p_letter">已收藏</h3>
+                </div>
+            </div>
+            <div class="memberMain">
+                <h2>帳號設定 </h2>
+                <!-----setting---->
+                <div class="memberMainBody setting show">
+                    <div class="btn_group">
+                        <a href="/ownMember/settingEdit" class="btn btn_blue">編輯</a>
+                    </div>
+                    <div class="member_img">
+                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                    </div>
+                    <div class="settingItem row">
+                        <div class="settingItemTitle  row">
+                            <h3>會</h3><h3>員</h3><h3>名</h3><h3>稱:</h3>
+                        </div>
+                        <p>會員名稱會員名稱</p>
+                    </div>
+                    <div class="settingItem row">
+                        <div class="settingItemTitle  row">
+                            <h3>信</h3><h3>箱:</h3>
+                        </div>
+                        <p>1616vvvvv@mail.com</p>
+                    </div>
+                    <div class="settingItem row">
+                        <div class="settingItemTitle  row">
+                            <h3>性</h3><h3>別:</h3>
+                        </div>
+                        <p>其他性別</p>
+                    </div>
+                    <div class="settingItem row">
+                        <div class="settingItemTitle  row">
+                            <h3>生</h3><h3>日:</h3>
+                        </div>
+                        <p>2024/03/16</p>
+                    </div>
+                    <div class="settingItem">
+                        <div class="settingItemTitle  row">
+                            <h3>自</h3><h3>我</h3><h3>介</h3><h3>紹:</h3>
+                        </div>
+                        <p>人這次到很的心的在我環境，的都當朋友裡面是，家都結人點的，是因為是一個的可以，了嗎還會有什麼換成，就說縮著愛。新的好棒結果是來了，明的感覺一個他可能：樣的感情得有來了好不好，早晨還有，被兩剛看到最後是這，我看著手機大家別人家自己不的慾望。我還是了他我需我懷疑樂是我，的太不好意都化可愛啊怎樣，分是太我也不難然會被得這加上，的心真的只可，一我比較，早了會的這笑的武器的記。例如這個人都不自己哈哈，我認為不是一樣，怎麼說爆炸我就是沒有，也都是聖誕節，不然⋯不然結果是我一定要。 </p>
+                    </div>
+
+                </div>
+
+                <!-----note---->
+                <div class="memberMainBody note">
+                    <div class="noteBox">
+                        <div class="noteBoxTop row">
+                            <div class="time">
+                                <p>2024/04/03</p>
+                                <p>18:00</p>
+                            </div>
+                            <div class="subject">
+                                <h3>您的揪團已有人申請</h3>
+                            </div>
+                            <button class="delet"><img src="http://localhost:8000/images/trash_icon.png" alt=""></button>
+                        </div>
+                        <div class="noteBoxTContent">
+                            <p>會員名稱 已申請參加您的揪團:  台中玩桌遊</p>
+                        </div>
+                    </div>
+                    <div class="noteBox">
+                        <div class="noteBoxTop row">
+                            <div class="time">
+                                <p>2024/04/03</p>
+                                <p>18:00</p>
+                            </div>
+                            <div class="subject">
+                                <h3>您的揪團已有人申請</h3>
+                            </div>
+                            <button class="delet"><img src="http://localhost:8000/images/trash_icon.png" alt=""></button>
+                        </div>
+                        <div class="noteBoxTContent">
+                            <p>會員名稱 已申請參加您的揪團:  台中玩桌遊</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-----record---->
+                <div class="memberMainBody record">
+                    <div class="memberEvent">
+                        <div class="memberEventImg">
+                            <img src="" alt="">
+                        </div>
+                        <div class="memberEventContentBlock">
+                            <h3>貼文主標貼文主標貼文主標貼文主標貼文主標貼文主標</h3>
+                            <div class="content_box_group">
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">活動時間</span>
+                                        2024-03-17 18:00 
+                                    </p>
+                                </div>
+                                <div class="content_box box_blue">
+                                    <p>
+                                        <span class="p_letter">地點:</span>
+                                        <a href=""> 403台中市西區公益路111號1樓</a>
+                                    </p>
+                                </div>
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">每人費用:</span>
+                                        500 
+                                    </p>
+                                </div>
+                            </div>   
+                        </div>
+                        
+                        <div class="memberEventJoiner">
+                            <div>
+                                <h4>申請人</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>已參加</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="memberEvent expired">
+                        <div class="memberEventImg">
+                            <img src="" alt="">
+                        </div>
+                        <div class="memberEventContentBlock">
+                            <h3>貼文主標貼文主標貼文主標貼文主標貼文主標貼文主標</h3>
+                            <div class="content_box_group">
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">活動時間</span>
+                                        2024-03-17 18:00 
+                                    </p>
+                                </div>
+                                <div class="content_box box_blue">
+                                    <p>
+                                        <span class="p_letter">地點:</span>
+                                        <a href=""> 403台中市西區公益路111號1樓</a>
+                                    </p>
+                                </div>
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">每人費用:</span>
+                                        500 
+                                    </p>
+                                </div>
+                            </div>   
+                        </div>
+                        
+                        <div class="memberEventJoiner">
+                            <div>
+                                <h4>申請人</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>已參加</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+                <!-----joinRecord---->
+                <div class="memberMainBody joinRecord">
+                    <div class="memberEvent">
+                        <div class="memberEventImg">
+                            <img src="" alt="">
+                        </div>
+                        <div class="memberEventContentBlock">
+                            <h3>貼文主標貼文主標貼文主標貼文主標貼文主標貼文主標</h3>
+                            <div class="content_box_group">
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">活動時間</span>
+                                        2024-03-17 18:00 
+                                    </p>
+                                </div>
+                                <div class="content_box box_blue">
+                                    <p>
+                                        <span class="p_letter">地點:</span>
+                                        <a href=""> 403台中市西區公益路111號1樓</a>
+                                    </p>
+                                </div>
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">每人費用:</span>
+                                        500 
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="memberEventJoiner">
+                            <div>
+                                <h4>主揪人</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>已參加</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="memberEvent expired">
+                        <div class="memberEventImg">
+                            <img src="" alt="">
+                        </div>
+                        <div class="memberEventContentBlock">
+                            <h3>貼文主標貼文主標貼文主標貼文主標貼文主標貼文主標</h3>
+                            <div class="content_box_group">
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">活動時間</span>
+                                        2024-03-17 18:00 
+                                    </p>
+                                </div>
+                                <div class="content_box box_blue">
+                                    <p>
+                                        <span class="p_letter">地點:</span>
+                                        <a href=""> 403台中市西區公益路111號1樓</a>
+                                    </p>
+                                </div>
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">每人費用:</span>
+                                        500 
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="memberEventJoiner">
+                            <div>
+                                <h4>主揪人</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>已參加</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+
+
+                <!-----like---->
+                <div class="memberMainBody like">
+                    <div class="memberEvent">
+                        <button class="delet"><img src="http://localhost:8000/images/trash_icon.png" alt=""></button>
+                        <div class="memberEventImg">
+                            <img src="" alt="">
+                        </div>
+                        <div class="memberEventContentBlock">
+                            <h3>貼文主標貼文主標貼文主標貼文主標貼文主標貼文主標</h3>
+                            <div class="content_box_group">
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">活動時間</span>
+                                        2024-03-17 18:00 
+                                    </p>
+                                </div>
+                                <div class="content_box box_blue">
+                                    <p>
+                                        <span class="p_letter">地點:</span>
+                                        <a href=""> 403台中市西區公益路111號1樓</a>
+                                    </p>
+                                </div>
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">每人費用:</span>
+                                        500 
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="memberEventJoiner">
+                            <div>
+                                <h4>主揪人</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>已參加</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>   
+                    <div class="memberEvent expired">
+                        <button class="delet"><img src="http://localhost:8000/images/trash_icon.png" alt=""></button>
+                        <div class="memberEventImg">
+                            <img src="" alt="">
+                        </div>
+                        <div class="memberEventContentBlock">
+                            <h3>貼文主標貼文主標貼文主標貼文主標貼文主標貼文主標</h3>
+                            <div class="content_box_group">
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">活動時間</span>
+                                        2024-03-17 18:00 
+                                    </p>
+                                </div>
+                                <div class="content_box box_blue">
+                                    <p>
+                                        <span class="p_letter">地點:</span>
+                                        <a href=""> 403台中市西區公益路111號1樓</a>
+                                    </p>
+                                </div>
+                                <div class="content_box">
+                                    <p>
+                                        <span class="p_letter">每人費用:</span>
+                                        500 
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="memberEventJoiner">
+                            <div>
+                                <h4>主揪人</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h4>已參加</h4>
+                                <div class="memberEventAvatar">
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                    <div class="member_img">
+                                        <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="http://localhost:8000/js/jquery-3.7.1.min.js"></script>
+<script>
+    $("header .member_box").click(function (){
+        $(".logoIn").toggleClass("show");
+        // console.log("OK");
+    });
+
+    $("#settingBtn").click(function (){
+        $(".memberMainBody").removeClass("show");
+        $(".setting").addClass("show");
+        $(".memberMain h2").text("帳號設定");
+    })
+
+    $("#noteBtn").click(function (){
+        $(".memberMainBody").removeClass("show");
+        $(".note").addClass("show");
+        $(".memberMain h2").text("訊息通知");
+    })
+
+    $("#recordBtn").click(function (){
+        $(".memberMainBody").removeClass("show");
+        $(".record").addClass("show");
+        $(".memberMain h2").text("揪團紀錄");
+    })
+
+    $("#joinRecordBtn").click(function (){
+        $(".memberMainBody").removeClass("show");
+        $(".joinRecord").addClass("show");
+        $(".memberMain h2").text("參加紀錄");
+    })
+
+    $("#likeBtn").click(function (){
+        $(".memberMainBody").removeClass("show");
+        $(".like").addClass("show");
+        $(".memberMain h2").text("已收藏");
+    })
+
+</script>
+</html>

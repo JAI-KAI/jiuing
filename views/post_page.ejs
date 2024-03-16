@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:8000/css/style.css">
+    <title>揪團</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/">
+                <div class="logo_box row">
+                    <img src="http://localhost:8000/images/LOGO.png" alt="">
+                    <p>揪ing</p>
+                </div>
+            </a>
+            <ul class="row">
+                <a href=""><li>會員專區</li></a>
+                <a href=""><li>新手上路</li></a>
+                <a href=""><li>聯絡我們</li></a>
+            </ul>
+            <div class="member_box">
+                <div class="member_img">
+                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                </div>
+                <p>會員名稱</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logoIn">
+                <input type="text" name="" id="">
+                <input type="password" name="" id="">
+                <input type="submit" value="登入">
+                <a href="/registration">註冊帳號</a>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container post_page">
+            <div class="post_item">
+                <div class="images"></div>
+                <div class="post_item_content">
+                    <div class="btn_group">
+                        <div class="btn btn_orange">申請加入</div>
+                    </div>
+                    <a href="" class="member_box">
+                        <div class="member_img">
+                            <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                        </div>
+                        <p>會員名稱</p>
+                    </a>
+                    <h2><%=post.title%></h2>
+                    <div class="content_box_group">
+                        <div class="content_box">
+                            <p>
+                                <span class="p_letter">揪團時間:</span>
+                                <%= post.activityDate%>  <%= post.activityTime%>
+                            </p>
+                        </div>
+                        <div class="content_box">
+                            <p>
+                                <span class="p_letter">活動時間:</span>
+                                <%= post.registeredDate%>  <%= post.registeredTime%>
+                            </p>
+                        </div>
+                        <div class="content_box box_blue">
+                            <p>
+                                <span class="p_letter">地點:</span>
+                                <a href=""><%=post.location%></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content_icon row">
+                        <div class="col-3">
+                            <p>最低人數</p>
+                            <img src="http://localhost:8000/images/MIN.png" alt="">
+                            <p><%= post.minPeople %></p>
+                        </div>
+                        <div class="col-3">
+                            <p>最多人數</p>
+                            <img src="http://localhost:8000/images/MAX.png" alt="">
+                            <p><%= post.maxPeople %></p>
+                        </div>
+                        <div class="col-3">
+                            <p>每人價錢</p>
+                            <img src="http://localhost:8000/images/PRICE.png" alt="">
+                            <p><%= post.price %></p>
+                        </div>                       
+                    </div>
+                    <p><%= post.content %></p>
+                </div>
+            </div>
+            <div class="post_right">
+                <div class="comment">
+                    <div class="comment_title">
+                        <h2>揪團討論ING</h2>
+                    </div>
+                    <div class="message_area">
+                        <% comments.forEach(comments => {%>
+                        <div class="message">
+                            <a href="" class="member_box">
+                                <div class="member_img">
+                                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                </div>
+                                <p>會員名稱</p>
+                            </a>
+                            <p><%= comments.message%></p>
+                        </div>
+                        <% }); %>
+    
+                    </div>
+                    <div class="comment_input">
+                        <form action="">
+                            <input type="text" placeholder="傳送留言....">
+                            <button class="submit"><img src="http://localhost:8000/images/submit.svg" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="join_box">
+                    <div class="already_join">
+                        <div class="join_box_title row">
+                            <h2>已參加</h2>
+                            <div class="num_box"><p>12</p></div>
+                        </div>
+                        <div class="join_member">
+                            <a href="">
+                                <div class="member_img">
+                                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="member_img">
+                                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="member_img">
+                                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="member_img">
+                                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                </div>
+                            </a>
+                            <a href="">
+                                <div class="member_img">
+                                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://localhost:8000/js/jquery-3.7.1.min.js"></script>
+<script>
+    $("header .member_box").click(function (){
+            $(".logoIn").toggleClass("show");
+            console.log("OK");
+    });        
+</script>
+</html>
