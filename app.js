@@ -13,9 +13,13 @@ app.set("view engine", "ejs");
 // 將 public 文件夾下的靜態文件暴露出來
 app.use(express.static(__dirname +'/public'));
 
+app.use( express.urlencoded({extended:true}) ); //解析表單資料
+app.use( express.json() );
+
 //連接資料庫(npm i mysql)
 var mysql=require("mysql");
 const { findSourceMap } = require("module");
+const router = require("./routers/register");
 var conn= mysql.createConnection({
     user:"root",
     password:"",
@@ -115,4 +119,6 @@ app.get("/ownMember/settingEdit",(req,res)=>{
 app.get("/register",(req,res)=>{
     res.render("register");
 })
-
+//導入註冊
+var register = require("./routers/register");
+app.use("/member/register", register);

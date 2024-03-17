@@ -21,17 +21,19 @@
                 <a href=""><li>聯絡我們</li></a>
             </ul>
             <div class="member_box">
-                <div class="member_img">
-                    <img src="http://localhost:8000/images/head_sticker.png" alt="">
+                <div class="member_img" >
+                    <img id="member_img" src="http://localhost:8000/images/head_sticker.png" alt="">
                 </div>
-                <p>會員名稱</p>
+                <p id="userName">會員名稱</p>
             </div>
         </div>
         <div class="container">
             <div class="logoIn">
-                <input type="text" name="" id="">
-                <input type="password" name="" id="">
-                <input type="submit" value="登入">
+                <form action="post" id="logoInform">
+                    <input type="text" name="userEmail" id="userEmail">
+                    <input type="password" name="passWord" id="passWord">
+                    <input type="submit" id="btnlogoIn" value="登入">
+                </form>
                 <a href="/register">註冊帳號</a>
             </div>
         </div>
@@ -76,10 +78,37 @@
     </div>
 </body>
 <script src="http://localhost:8000/js/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     $("header .member_box").click(function (){
         $(".logoIn").toggleClass("show");
-        console.log("OK");
     });
+    $("#logoInform").on('submit', async function(e) {
+        e.preventDefault();
+        
+        var dataToServer = {
+            userEmail: $("#userEmail").val(),
+            passWord: $("#passWord").val()
+        }
+        console.log(dataToServer)
+        var config = {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        var result = await axios.post(
+            "/member/register/login",
+            JSON.stringify(dataToServer),
+            config
+        )
+        if(result.data['success']) {
+            alert("登入成功");
+            $("#member_img").prop("src", result.data.headShot);
+            $("#userName").text(result.data.userName)
+
+        }else {
+            alert('帳號或密碼錯誤')
+        }
+    })
 </script>
 </html>

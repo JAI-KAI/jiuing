@@ -1,0 +1,73 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- 主機： 127.0.0.1
+-- 產生時間： 2024-03-17 08:30:37
+-- 伺服器版本： 10.4.32-MariaDB
+-- PHP 版本： 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- 資料庫： `jiuing`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `member`
+--
+
+CREATE TABLE `member` (
+  `memberID` int(4) UNSIGNED NOT NULL,
+  `userName` varchar(20) NOT NULL,
+  `passWord` varchar(50) NOT NULL,
+  `userEmail` varchar(256) NOT NULL,
+  `headShot` varchar(100) NOT NULL,
+  `birth` date NOT NULL,
+  `birthBoolean` tinyint(1) NOT NULL,
+  `sex` int(5) UNSIGNED NOT NULL,
+  `cryptokey` blob NOT NULL,
+  `cryptoiv` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- 傾印資料表的資料 `member`
+--
+
+INSERT INTO `member` (`memberID`, `userName`, `passWord`, `userEmail`, `headShot`, `birth`, `birthBoolean`, `sex`, `cryptokey`, `cryptoiv`) VALUES
+(6, '小智', '43ead147ca2360d92e569b3b607a2cae', 'gg@gmail.com', '.\\uploads\\1710660566767-id.png', '2024-03-28', 0, 1, 0x5841a5484a57d6c9de5a52cf228a6c9d36df6f0e009eb0f7e133904d6b5a9133, 0x55052b870a73dc05ec23cc099f8de314);
+
+--
+-- 已傾印資料表的索引
+--
+
+--
+-- 資料表索引 `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`memberID`);
+
+--
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+--
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `member`
+--
+ALTER TABLE `member`
+  MODIFY `memberID` int(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

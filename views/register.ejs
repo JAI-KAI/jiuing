@@ -11,33 +11,39 @@
         <div class="container">
             <h2 style="text-align: center;">註冊帳號</h2>
             <div class="settingEdit">
-                <form action="" method="get">
+                <form id="registerform" action="" method="post">
                     <div class="member_img">
                         <img  id="imagePreview" src="http://localhost:8000/images/head_sticker.png" alt="">
                     </div>
                     <div class="settingItem row">
                         <label class="settingItemTitle row"><h3>上</h3><h3>傳</h3><h3>頭</h3><h3>貼:</h3></label>
-                        <input type="file" id="imageInput" accept="image/*" multiple="false">    
+                        <input type="file" id="headShot" accept=".png,.jpg,.jpeg" multiple="false" required>    
                     </div>
                     <div class="settingItem row">
-                        <label for="memberName" class="settingItemTitle row"><h3>會</h3><h3>員</h3><h3>名</h3><h3>稱:</h3></label>
-                        <input type="text" value="" name="memberName">
+                        <label for="userName" class="settingItemTitle row"><h3>會</h3><h3>員</h3><h3>名</h3><h3>稱:</h3></label>
+                        <input type="text" value="" name="userName" id="userName" required>
                     </div>
                     <div class="settingItem row">
-                        <label for="mail" class="settingItemTitle row"><h3>信</h3><h3>箱:</h3></label>
-                        <input type="text" value="" name="mail">
+                        <label for="userEmail" class="settingItemTitle row"><h3>信</h3><h3>箱:</h3></label>
+                        <input type="email" value="" name="userEmail" id="userEmail" required>
                     </div>
                     <div class="settingItem row">
-                        <label for="password" class="settingItemTitle row"><h3>密</h3><h3>碼:</h3></label>
-                        <input type="password" value="" name="password">
+                        <label for="passWord" class="settingItemTitle row"><h3>密</h3><h3>碼:</h3></label>
+                        <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,13}$" type="passWord" value="" name="passWord" id="passWord" required>
+                    </div>
+                    <div class="settingItem row">
+                        <label for="passWord2" class="settingItemTitle row"><h3>重</h3><h3>新</h3><h3>輸</h3><h3>入:</h3></label>
+                        <input pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,13}$" type="passWord" value="" name="passWord2" id="passWord2" required>
                     </div>
                     <div class="settingItem row">
                         <label for="birth" class="settingItemTitle row"><h3>生</h3><h3>日:</h3></label>
-                        <input type="date" value="" name="birth">
+                        <input type="date" value="" name="birth" id="birth" required>
+                        <label for="birthBoolean" class="settingItemTitle row"><h3>公</h3><h3>開:</h3></label>
+                        <input type="checkbox" id="birthBoolean" name="birthBoolean">
                     </div>
                     <div class="settingItem row">
                         <label for="sex" class="settingItemTitle row"><h3>性</h3><h3>別:</h3></label>
-                        <select name="sex" id="">
+                        <select name="sex" id="sex">
                             <option value="0">男</option>
                             <option value="1">女</option>
                             <option value="2">其他</option>
@@ -49,7 +55,7 @@
                         <textarea name="introduction" id="" cols="30" rows="10"></textarea>
                     </div>
                     <div class="btn_group">
-                        <button class="btn btn_orange">確定</button>
+                        <button type="submit" class="btn btn_orange">確定</button>
                         <a href="/ownMember" class="btn btn_gray">取消</a>
                     </div>
                 </form>
@@ -58,26 +64,42 @@
     </div>
 </body>
 <script src="http://localhost:8000/js/jquery-3.7.1.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
-    $("header .member_box").click(function (){
-        $(".logoIn").toggleClass("show");
-        console.log("OK");
-    });
-
-    const imageInput = document.getElementById('imageInput');
-    const previewImage = document.getElementById('imagePreview');
-    let originalImageURL = previewImage.src;
-
-    imageInput.addEventListener('change', function() {
-      const file = this.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          previewImage.src = e.target.result;
-          originalImageURL = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
+        //頭貼預覽
+        $('#headShot').on('change', function(e) {
+            var userimg =  e.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                $('#imagePreview').prop('src', event.target.result);
+            }
+            reader.readAsDataURL(userimg);
+        })
+        
+        $('#registerform').on('submit', async function(e) {
+            e.preventDefault();
+            if($('#passWord').val() == $('#passWord2').val()) {
+                var formData = new FormData();
+                var headShot = $('#headShot').prop('files')[0];
+                var config = {headers: {'Content-Type': 'multipart/form-data'}};
+                formData.append('headShot', headShot);
+                formData.append('userEmail', $('#userEmail').val());
+                formData.append('passWord', $('#passWord').val());
+                formData.append('userName', $('#userName').val());
+                formData.append('birth', $('#birth').val());
+                formData.append('birthBoolean', $('#birthBoolean').prop('checked') ? 1 : 0);
+                formData.append('sex', $('#sex').val());
+                var result = await axios.post(
+                    "/member/register",
+                    formData,
+                    config,
+                )
+                console.log(result.data['success']);
+                (result.data['success']) ? alert("註冊成功") : alert("註冊失敗")
+            }else {
+                alert("密碼輸入錯誤")
+            }
+                    
+        })
 </script>
 </html>
