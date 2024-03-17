@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:8000/css/style.css">
+    <title>揪團</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <h2 style="text-align: center;">註冊帳號</h2>
+            <div class="settingEdit">
+                <form action="" method="get">
+                    <div class="member_img">
+                        <img  id="imagePreview" src="http://localhost:8000/images/head_sticker.png" alt="">
+                    </div>
+                    <div class="settingItem row">
+                        <label class="settingItemTitle row"><h3>上</h3><h3>傳</h3><h3>頭</h3><h3>貼:</h3></label>
+                        <input type="file" id="imageInput" accept="image/*" multiple="false">    
+                    </div>
+                    <div class="settingItem row">
+                        <label for="memberName" class="settingItemTitle row"><h3>會</h3><h3>員</h3><h3>名</h3><h3>稱:</h3></label>
+                        <input type="text" value="" name="memberName">
+                    </div>
+                    <div class="settingItem row">
+                        <label for="mail" class="settingItemTitle row"><h3>信</h3><h3>箱:</h3></label>
+                        <input type="text" value="" name="mail">
+                    </div>
+                    <div class="settingItem row">
+                        <label for="password" class="settingItemTitle row"><h3>密</h3><h3>碼:</h3></label>
+                        <input type="password" value="" name="password">
+                    </div>
+                    <div class="settingItem row">
+                        <label for="birth" class="settingItemTitle row"><h3>生</h3><h3>日:</h3></label>
+                        <input type="date" value="" name="birth">
+                    </div>
+                    <div class="settingItem row">
+                        <label for="sex" class="settingItemTitle row"><h3>性</h3><h3>別:</h3></label>
+                        <select name="sex" id="">
+                            <option value="0">男</option>
+                            <option value="1">女</option>
+                            <option value="2">其他</option>
+                            <option value="3">不公開</option>
+                        </select>
+                    </div>
+                    <div class="settingItem">
+                        <label for="introduction" class="settingItemTitle row"><h3>自</h3><h3>我</h3><h3>介</h3><h3>紹:</h3></label>
+                        <textarea name="introduction" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="btn_group">
+                        <button class="btn btn_orange">確定</button>
+                        <a href="/ownMember" class="btn btn_gray">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://localhost:8000/js/jquery-3.7.1.min.js"></script>
+<script>
+    $("header .member_box").click(function (){
+        $(".logoIn").toggleClass("show");
+        console.log("OK");
+    });
+
+    const imageInput = document.getElementById('imageInput');
+    const previewImage = document.getElementById('imagePreview');
+    let originalImageURL = previewImage.src;
+
+    imageInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          previewImage.src = e.target.result;
+          originalImageURL = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+</script>
+</html>

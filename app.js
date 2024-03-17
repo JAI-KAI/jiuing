@@ -103,12 +103,16 @@ app.get("/ownpost/:id",(req,res)=>{
 
 //登入者的會員頁面 
 app.get("/ownMember",(req,res)=>{
-    res.render("own_member")
+    res.render("own_member");
 })
 
 //登入者的會員帳號編輯頁面 
 app.get("/ownMember/settingEdit",(req,res)=>{
-    res.render("setting_edit")
+    res.render("setting_edit");
 })
 
+//註冊 
+app.get("/register",(req,res)=>{
+    res.render("register");
+})
 
