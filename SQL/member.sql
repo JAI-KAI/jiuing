@@ -44,8 +44,7 @@ CREATE TABLE `member` (
 -- 傾印資料表的資料 `member`
 --
 
-INSERT INTO `member` (`memberID`, `userName`, `passWord`, `userEmail`, `headShot`, `birth`, `birthBoolean`, `sex`, `cryptokey`, `cryptoiv`) VALUES
-(6, '小智', '43ead147ca2360d92e569b3b607a2cae', 'gg@gmail.com', '.\\uploads\\1710660566767-id.png', '2024-03-28', 0, 1, 0x5841a5484a57d6c9de5a52cf228a6c9d36df6f0e009eb0f7e133904d6b5a9133, 0x55052b870a73dc05ec23cc099f8de314);
+
 
 --
 -- 已傾印資料表的索引
